@@ -65,6 +65,6 @@ Get-PnpDevice -Class Bluetooth |
 
   $diff = Get-Content -Path  C:\ProgramData\Drive\files\NBT.txt | Where-Object {$_ -notin $bt} 
   $diff | Unpair_Bluetooth
-  #
+  #script continues when called from the file again.
   
  

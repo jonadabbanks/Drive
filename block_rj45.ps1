@@ -1,4 +1,4 @@
-<# still in development
+ still in development
 
 #script to check if file sharing is enabled 
 for (;;){
