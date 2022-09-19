@@ -22,7 +22,7 @@ $ErrorActionPreference = 'SilentlyContinue'
   }Else{
    #This part of the script filters the instance id from isolated drives.
   $instanceid = Get-Content C:\ProgramData\Drive\files\Unauthorized.txt
-  $id = $instanceid.Substring(46)
+  $id = $instanceid.Substring(30)
   $id = $id.trim()
   #this code tells the program to leave temp authorised drives.
   $mounted = Get-Content -Path  C:\ProgramData\Drive\files\mounted.txt

@@ -1,4 +1,4 @@
-#for (;;){
+for (;;){
 function Block_xender {
   Add-Type @"
   using System;
@@ -55,6 +55,11 @@ if($text -like '*Xender Web*'-and $text -like '*172.20.10.1*'-and $text -like '*
   Block_xender
 } else {
   Write-Host 'no'
+}
+  if($text -like '*Specify the location of your website*'-and $text -like '*Internet or network address*'-and $text -like '*FTP*' ) {
+    Stop-Process -Name rundll32
+  } else {
+    Write-Host 'no'
   Start-Sleep -Seconds 1
 }
-#}
+}
