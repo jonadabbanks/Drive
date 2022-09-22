@@ -1,13 +1,13 @@
-# Drive-Bot
-# A Software Bot that prevents File Copying  via Bluetooth,Usb ports, Usb cable, Wireless transfer (Wifi) & File sharing via network port.
+ Drive-Bot 
+*A Software Bot that prevents File Copying  via Bluetooth,Usb ports, Usb cable, Wireless transfer (Wifi) & File sharing via network port.*
 
-# Program Written by:  Chigozie Jonadab Emmanuel.
-# Built for  Microsoft Powershell,Cmd,RPA Technology & Python 
-# Built with  Windows 11
+# Program Written by:  *Chigozie Jonadab Emmanuel*
+#Technologies Used: *Microsoft Powershell,Cmd,RPA Technology & Python*
+# Built with  *Windows 11*
 
 # Machines Supported: Windows 7,10 & 11
                                                   USAGE
-# REGISTRATION :   Drive has a Gui interface where a User Registers their Devices (flash_drives,hard_drives,smart_phones, bluetooth_devices etc).After registration, the devices are saved and will be used by the bot as a paremeter to filter out unregistered drives.At the backend, the bot runs in the background, checking each paremeters provided making sure that no devices are allowed into the system without permission.
+REGISTRATION :   *Drive has a Gui interface where a User Registers their Devices (flash_drives,hard_drives,smart_phones, bluetooth_devices etc).After registration, the devices are saved and will be used by the bot as a paremeter to filter out unregistered drives.At the backend, the bot runs in the background, checking each paremeters provided making sure that no devices are allowed into the system without permission*
 
 # ALERT : When an unregistered device is detected, drive sends a mail to the end user, Alerting them of a plugged in device. telling them if its a phone,bluetooth or external drives (flash,ssd,hdd).  drive takes the picture of the intruder (depends on how close the intruder is to the webcam)
 
