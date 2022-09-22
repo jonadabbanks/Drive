@@ -2,7 +2,7 @@ $ErrorActionPreference = 'SilentlyContinue'
 	$file = Get-Content -Path  C:\ProgramData\Drive\files\NULL.txt
 	$file | Out-File -FilePath C:\ProgramData\Drive\files\FLOW.txt
   # This part of the script gets only plugged in usb devices 
-  Get-WmiObject Win32_USBControllerDevice |ForEach-Object{[wmi]($_.Dependent)} | Where-Object {($_.Description -like '*mass*')} | Sort-Object Description,Status,DeviceID | Format-Table Description, Status,DeviceID  -auto | Format-Table -AutoSize | Out-File -FilePath C:\ProgramData\Drive\files\GET_DISK.txt 
+  Get-WmiObject Win32_USBControllerDevice |ForEach-Object{[wmi]($_.Dependent)} | Where-Object {($_.Description -like '*mass*')} | Sort-Object Description,Status,DeviceID | Format-Table  Status,DeviceID  -auto | Format-Table -AutoSize | Out-File -FilePath C:\ProgramData\Drive\files\GET_DISK.txt 
   (Get-Content C:\ProgramData\Drive\files\GET_DISK.txt ) | Where-Object {$_.trim() -ne "" } | set-content C:\ProgramData\Drive\files\GET_DISK.txt
   $exclude = 1,2	
   $drives = Get-Content "C:\ProgramData\Drive\files\GET_DISK.txt" | Where-Object { $_.ReadCount -NotIn $exclude }
@@ -21,8 +21,7 @@ $ErrorActionPreference = 'SilentlyContinue'
   Write-Host "no drives"
   }Else{
    #This part of the script filters the instance id from isolated drives.
-  $instanceid = Get-Content C:\ProgramData\Drive\files\Unauthorized.txt
-  $id = $instanceid.Substring(30)
+  $id = Get-Content C:\ProgramData\Drive\files\Unauthorized.txt
   $id = $id.trim()
   #this code tells the program to leave temp authorised drives.
   $mounted = Get-Content -Path  C:\ProgramData\Drive\files\mounted.txt
