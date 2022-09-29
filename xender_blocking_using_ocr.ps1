@@ -1,3 +1,5 @@
+
+  $ErrorActionPreference = 'SilentlyContinue'
 # make sure all required assemblies are loaded BEFORE any class definitions use them:
 try
 {
@@ -131,7 +133,8 @@ function Convert-PsoImageToText
 
 
 
-for (;;){
+#added a xender block function using optical image recognition 
+
 function Block_xender {
   Add-Type @"
   using System;
@@ -178,21 +181,27 @@ $bmp.Dispose()
 
 $text = Convert-PsoImageToText "C:\ProgramData\Drive\files\Screen.png" -Language en-us
 #for Edge browser and any compartible browser
-if($text -like "*:33455/'web/index.html*"-and $text -like '*Internal storage:*') 
-{
+if($text -like "*:33455/web/index.html*"-and $text -like '*Internal storage:*') 
+{ 
+  #the xender function is called 
   Block_xender
 } else {
-      Write-Host 'no'
+      Write-Host 
 }
 if($text -like '*Xender Web*'-and $text -like '*172.20.10.1*'-and $text -like '*Internal storage:*' ) {
   Block_xender
 } else {
-  Write-Host 'no'
+  Write-Host 
 }
   if($text -like '*Specify the location of your website*'-and $text -like '*Internet or network address*'-and $text -like '*FTP*' ) {
     Stop-Process -Name rundll32
   } else {
-    Write-Host 'no'
-  Start-Sleep -Seconds 1
-}
+    Write-Host 
+  }
+    if( $text -like '*ftp: connect*'-or $text -like '*ftp*' ) {
+      Stop-Process -Name cmd
+      Stop-Process -Name ftp
+    } else {
+      Write-Host 
+
 }
