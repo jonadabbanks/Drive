@@ -12,7 +12,7 @@
 
 # Machines Supported:
 *Windows 7,10 & 11*
-                                                  USAGE
+                                                  
 # REGISTRATION :   
 *Drive has a Gui interface where a User Registers their Devices (flash_drives,hard_drives,smart_phones, bluetooth_devices etc).After registration, the devices are saved and will be used by the bot as a paremeter to filter out unregistered drives.At the backend, the bot runs in the background, checking each paremeters provided making sure that no devices are allowed into the system without permission*
 
