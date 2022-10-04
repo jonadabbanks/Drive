@@ -10,3 +10,6 @@ add a wifi toggle button.
 
 *UI FIXES*
 Add a one button toggle all command to activate  all  security features
+$phones = Get-PnpDevice -class 'wpd' -presentonly -ErrorAction SilentlyContinue | 
+Select-Object -Property Name,spacing,InstanceId|
+Select-Object -First 2000000 | 
