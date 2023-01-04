@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>My Autowriter</title>
+    <script>
+      function autowrite() {
+        var i = 0;
+        var text = "This is an autowriter.";
+        var speed = 50;
+
+        function typeWriter() {
+          if (i < text.length) {
+            document.getElementById("output").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+
+        typeWriter();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="output"></div>
+    <button onclick="autowrite()">Start Autowriter</button>
+  </body>
+</html>
