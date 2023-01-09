@@ -1,1 +1,0 @@
-PowerShell.exe -ExecutionPolicy Unrestricted -command "C:\ProgramData\Drive\Files\Drive_bot.ps1"
